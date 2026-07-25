@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anan AI Ads - Services</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#0f172a,#1e3a8a,#2563eb);
+min-height:100vh;
+padding:30px;
+}
+
+.container{
+max-width:850px;
+margin:auto;
+}
+
+.header{
+text-align:center;
+color:white;
+margin-bottom:30px;
+}
+
+.header h1{
+font-size:40px;
+margin-bottom:10px;
+}
+
+.header p{
+font-size:18px;
+opacity:.9;
+}
+
+.card{
+background:white;
+border-radius:20px;
+padding:25px;
+margin-bottom:25px;
+box-shadow:0 10px 30px rgba(0,0,0,.15);
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+}
+
+.card h2{
+margin-bottom:15px;
+color:#2563eb;
+}
+
+select{
+width:100%;
+padding:15px;
+font-size:17px;
+border-radius:10px;
+border:2px solid #ddd;
+outline:none;
+}
+
+select:focus{
+border-color:#2563eb;
+}
+
+#price{
+font-size:34px;
+font-weight:bold;
+text-align:center;
+color:#16a34a;
+padding:15px;
+}
+
+button{
+width:100%;
+padding:18px;
+font-size:20px;
+font-weight:bold;
+border:none;
+border-radius:12px;
+background:#2563eb;
+color:white;
+cursor:pointer;
+transition:.3s;
+}
+
+button:hover{
+background:#1d4ed8;
+}
+
+.plans-box{
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+justify-content:center;
+margin-top:20px;
+}
+
+.plan-card{
+background:white;
+width:220px;
+padding:25px;
+border-radius:20px;
+text-align:center;
+box-shadow:0 8px 25px rgba(0,0,0,.15);
+cursor:pointer;
+border:2px solid transparent;
+transition:.3s;
+}
+
+.plan-card:hover{
+transform:translateY(-8px);
+border-color:#2563eb;
+}
+
+.plan-card h3{
+color:#2563eb;
+font-size:22px;
+margin-bottom:10px;
+}
+
+.plan-card p{
+font-size:18px;
+font-weight:bold;
+color:#16a34a;
+}
+
+.plan-card.active{
+border-color:#2563eb;
+background:#eff6ff;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="header">
+<h1>Choose Your Service</h1>
+<p>Select a service and plan to continue.</p>
+</div>
+
+<div class="card">
+
+<h2>🚀 Choose Service</h2>
+
+<select id="service">
+
+<option value="">Select Service</option>
+
+<option value="AI Image Ads">🤖 AI Image Ads</option>
+
+<option value="AI Video Ads">🎥 AI Video Ads</option>
+
+<option value="Facebook Ads">📢 Facebook Ads</option>
+
+<option value="Instagram Ads">📸 Instagram Ads</option>
+
+<option value="TikTok Ads">🎵 TikTok Ads</option>
+
+<option value="Google Ads">🔍 Google Ads</option>
+
+<option value="Landing Page">🌐 Landing Page</option>
+
+<option value="Logo Design">🎨 Logo Design</option>
+
+<option value="Banner Design">🖼 Banner Design</option>
+
+<option value="Social Media Management">📱 Social Media Management</option>
+
+</select>
+
+</div>
+
+<div class="card">
+
+<h2>📋 Choose Plan</h2>
+
+<div id="plans" class="plans-box">
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>💰 Total Price</h2>
+
+<div id="price">
+Rs. 0
+</div>
+
+</div>
+
+<div class="card">
+
+<button onclick="continueNow()">
+Continue →
+</button>
+
+</div>
+
+<script>
+
+const services = {
+
+"AI Image Ads":{
+"Basic (5 Images)":5000,
+"Pro (15 Images)":12000,
+"Premium (30 Images)":20000
+},
+
+"AI Video Ads":{
+"Basic (1 Video)":7000,
+"Pro (5 Videos)":25000,
+"Premium (10 Videos)":45000
+},
+
+"Facebook Ads":{
+"7 Days":8000,
+"15 Days":15000,
+"30 Days":28000
+},
+
+"Instagram Ads":{
+"7 Days":8000,
+"15 Days":15000,
+"30 Days":28000
+},
+
+"TikTok Ads":{
+"7 Days":10000,
+"15 Days":18000,
+"30 Days":35000
+},
+
+"Google Ads":{
+"Basic":10000,
+"Standard":20000,
+"Premium":35000
+},
+
+"Landing Page":{
+"Basic":12000,
+"Professional":25000,
+"Business":40000
+},
+
+"Logo Design":{
+"Basic":3000,
+"Professional":6000,
+"Premium":10000
+},
+
+"Banner Design":{
+"1 Banner":1000,
+"5 Banners":4000,
+"10 Banners":7000
+},
+
+"Social Media Management":{
+"1 Month":25000,
+"3 Months":70000,
+"6 Months":130000
+}
+
+};
+
+const service = document.getElementById("service");
+const plansBox = document.getElementById("plans");
+const price = document.getElementById("price");
+
+service.addEventListener("change", function(){
+
+plansBox.innerHTML = "";
+
+price.innerHTML = "Rs. 0";
+
+if(!this.value) return;
+
+for(let p in services[this.value]){
+
+plansBox.innerHTML += `
+<div class="plan-card" onclick="selectPlan('${p}', ${services[this.value][p]}, this)">
+<h3>${p}</h3>
+<p>Rs. ${services[this.value][p]}</p>
+</div>
+`;
+
+}
+
+});
+
+function selectPlan(name, amount, element){
+
+document.querySelectorAll(".plan-card").forEach(card=>{
+card.classList.remove("active");
+});
+
+element.classList.add("active");
+
+price.innerHTML = "Rs. " + amount;
+
+}
+
+function continueNow(){
+
+let serviceName = service.value;
+
+let selected = document.querySelector(".plan-card.active");
+
+if(!serviceName || !selected){
+alert("Please select a service and plan.");
+return;
+}
+
+let planName = selected.querySelector("h3").innerText;
+let amount = price.innerText;
+
+let message =
+`Hello, I want to order a service.%0A%0AService: ${serviceName}%0APlan: ${planName}%0APrice: ${amount}`;
+
+window.open(
+`https://wa.me/923290609643?text=${message}`,
+"_blank"
+);
+
+}
+
+</script>
+
+</body>
+</html>
+
+<a href="index.html">
+Back Home
+</a>

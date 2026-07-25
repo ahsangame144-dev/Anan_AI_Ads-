@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anan AI Ads</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#f4f7fb;
+color:#222;
+}
+
+/* HEADER */
+
+header{
+background:#000;
+color:#fff;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 40px;
+position:sticky;
+top:0;
+}
+
+.logo{
+font-size:30px;
+font-weight:bold;
+color:#00bfff;
+}
+
+nav a{
+color:#fff;
+text-decoration:none;
+margin-left:20px;
+font-size:18px;
+}
+
+nav a:hover{
+color:#00bfff;
+}
+
+.btn{
+background:#00bfff;
+color:#fff;
+padding:12px 24px;
+border:none;
+border-radius:8px;
+cursor:pointer;
+font-size:16px;
+}
+
+/* HERO */
+
+.hero{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:80px 40px;
+}
+
+.hero-text{
+width:50%;
+}
+
+.hero-text h1{
+font-size:52px;
+margin-bottom:20px;
+}
+
+.hero-text p{
+font-size:20px;
+line-height:1.7;
+margin-bottom:30px;
+color:#555;
+}
+
+.hero-image{
+width:45%;
+}
+
+.hero-image img{
+width:100%;
+border-radius:20px;
+}
+
+/* SERVICES */
+
+.services{
+padding:80px 30px;
+text-align:center;
+background:#fff;
+}
+
+.services h2{
+font-size:40px;
+margin-bottom:40px;
+}
+
+.service-box{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:25px;
+}
+
+.card{
+width:300px;
+background:white;
+padding:25px;
+border-radius:15px;
+box-shadow:0 5px 20px rgba(0,0,0,.1);
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+}
+
+.card h3{
+color:#00bfff;
+margin-bottom:15px;
+}
+
+.card p{
+line-height:1.6;
+color:#555;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+header{
+flex-direction:column;
+}
+
+nav{
+margin:20px 0;
+}
+
+nav a{
+display:block;
+margin:10px 0;
+}
+
+.hero{
+flex-direction:column;
+text-align:center;
+padding:40px 20px;
+}
+
+.hero-text{
+width:100%;
+}
+
+.hero-image{
+width:100%;
+margin-top:30px;
+}
+
+.hero-text h1{
+font-size:36px;
+}
+
+}
+
+/* CONTACT */
+
+.contact{
+padding:80px 20px;
+text-align:center;
+background:#fff;
+}
+
+.contact h2{
+font-size:40px;
+margin-bottom:20px;
+}
+
+.contact p{
+margin-bottom:30px;
+color:#555;
+}
+
+.contact form{
+max-width:600px;
+margin:auto;
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+.contact input,
+.contact textarea{
+padding:15px;
+border:1px solid #ccc;
+border-radius:8px;
+font-size:16px;
+}
+
+.contact textarea{
+height:150px;
+resize:none;
+}
+
+/* FOOTER */
+
+footer{
+background:#000;
+color:#fff;
+text-align:center;
+padding:40px 20px;
+margin-top:50px;
+}
+
+/* WHATSAPP BUTTON */
+
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:#fff;
+width:60px;
+height:60px;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:30px;
+text-decoration:none;
+box-shadow:0 5px 15px rgba(0,0,0,.3);
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+Anan AI Ads
+</div>
+  
+<nav>
+<a href="#">Home</a>
+<a href="#">Services</a>
+<a href="#">Portfolio</a>
+<a href="#">Pricing</a>
+<a href="#">Contact</a>
+</nav>
+
+<a href="services.html" class="btn">
+Get Started
+</a>
+
+</header>
+
+<section class="hero">
+
+<div class="hero-text">
+
+<h1>Grow Your Business With AI Ads</h1>
+
+<p>
+We help businesses grow with AI-powered advertising, creative designs, and high-converting marketing campaigns.
+</p>
+
+<a href="login.html" class="btn">
+Get Started
+</a>
+
+</div>
+
+<div class="hero-image">
+
+<img src="https://picsum.photos/600/450" alt="AI">
+
+</div>
+
+</section>
+
+<section class="services">
+
+<h2>Our Services</h2>
+
+<div class="service-box">
+
+<div class="card">
+<h3>🤖 AI Ads Design</h3>
+<p>Create professional AI image and video ads for your business.</p>
+</div>
+
+<div class="card">
+<h3>📱 Social Media Ads</h3>
+<p>Facebook, Instagram and TikTok advertising management.</p>
+</div>
+
+<div class="card">
+<h3>🌐 Landing Pages</h3>
+<p>Modern landing pages that increase leads and sales.</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="portfolio">
+
+<h2>Our Portfolio</h2>
+
+<p class="portfolio-text">
+Here are some of our latest AI advertising projects.
+</p>
+
+<div class="portfolio-box">
+
+<div class="project">
+<img src="https://picsum.photos/350/220?random=1">
+<h3>Facebook Ads Campaign</h3>
+<p>Generated 5X more leads for a local business.</p>
+</div>
+
+<div class="project">
+<img src="https://picsum.photos/350/220?random=2">
+<h3>TikTok Video Ads</h3>
+<p>Created engaging AI-powered video ads.</p>
+</div>
+
+<div class="project">
+<img src="https://picsum.photos/350/220?random=3">
+<h3>Google Ads</h3>
+<p>Optimized campaigns to increase sales.</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="pricing">
+
+<h2>Our Pricing</h2>
+
+<div class="pricing-box">
+
+<div class="plan">
+<h3>Basic</h3>
+<h1>$99</h1>
+<p>✔ 5 AI Ads</p>
+<p>✔ 7 Days Support</p>
+<p>✔ 1 Campaign</p>
+<button class="btn">Choose Plan</button>
+</div>
+
+<div class="plan">
+<h3>Standard</h3>
+<h1>$299</h1>
+<p>✔ 15 AI Ads</p>
+<p>✔ Social Media Ads</p>
+<p>✔ 30 Days Support</p>
+<button class="btn">Choose Plan</button>
+</div>
+
+<div class="plan">
+<h3>Premium</h3>
+<h1>$599</h1>
+<p>✔ Unlimited AI Ads</p>
+<p>✔ Landing Page</p>
+<p>✔ Priority Support</p>
+<button class="btn">Choose Plan</button>
+</div>
+
+</div>
+
+</section>
+
+<section class="contact">
+
+<h2>Contact Us</h2>
+
+<p>Let's grow your business with AI advertising.</p>
+
+<form action="https://formsubmit.co/ananaiads167@gmail.com" method="POST">
+
+<input type="text" placeholder="Your Name" required>
+
+<input type="email" placeholder="Your Email" required>
+
+<input type="tel" placeholder="Your Phone Number" required>
+
+<textarea placeholder="Tell us about your project"></textarea>
+
+<input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_subject" value="New Client - Anan AI Ads">
+<input type="hidden" name="_template" value="table">
+
+<button class="btn">Send Message</button>
+
+</form>
+
+</section>
+
+<a href="https://wa.me/923290609643" class="whatsapp" target="_blank">
+💬
+</a>
+
+<footer>
+
+<h2>Anan AI Ads</h2>
+
+<p>Helping Businesses Grow with AI Advertising.</p>
+
+<p>📧 Email: ananaiads167@gmail.com</p>
+
+<p>📱 WhatsApp: +92 329 0609643</p>
+
+<p>© 2026 Anan AI Ads. All Rights Reserved.</p>
+
+</footer>
+
+<script>
+console.log("Welcome To Anan AI Ads");
+</script>
+
+</body>
+</html>
