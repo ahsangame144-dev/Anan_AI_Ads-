@@ -33,9 +33,43 @@ top:0;
 }
 
 .logo{
-font-size:30px;
-font-weight:bold;
-color:#00bfff;
+font-size:32px;
+font-weight:900;
+position:relative;
+background:linear-gradient(
+90deg,
+#ff0000,
+#00ffff,
+#ff00ff,
+#ffff00,
+#00ff00,
+#ff0000
+);
+background-size:400%;
+-webkit-background-clip:text;
+color:transparent;
+animation:logoRGB 5s linear infinite;
+text-shadow:
+0 0 10px rgba(0,255,255,.8),
+0 0 20px rgba(255,0,255,.6);
+letter-spacing:1px;
+}
+
+
+@keyframes logoRGB{
+
+0%{
+background-position:0% 50%;
+}
+
+50%{
+background-position:100% 50%;
+}
+
+100%{
+background-position:0% 50%;
+}
+
 }
 
 nav a{
@@ -229,24 +263,427 @@ margin-top:50px;
 position:fixed;
 bottom:20px;
 right:20px;
-background:#25D366;
-color:#fff;
-width:60px;
-height:60px;
+width:65px;
+height:65px;
 border-radius:50%;
 display:flex;
 justify-content:center;
 align-items:center;
-font-size:30px;
+font-size:32px;
 text-decoration:none;
-box-shadow:0 5px 15px rgba(0,0,0,.3);
+color:white;
+background:#111;
+z-index:1;
+overflow:hidden;
 }
+
+.whatsapp::before{
+content:"";
+position:absolute;
+top:-3px;
+left:-3px;
+right:-3px;
+bottom:-3px;
+background:linear-gradient(
+45deg,
+#25D366,
+#00ffcc,
+#008cff,
+#ff00ff,
+#25D366
+);
+background-size:400%;
+border-radius:50%;
+z-index:-1;
+animation:whatsappLight 3s linear infinite;
+}
+
+.whatsapp::after{
+content:"";
+position:absolute;
+top:4px;
+left:4px;
+right:4px;
+bottom:4px;
+background:#25D366;
+border-radius:50%;
+z-index:-1;
+}
+
+@keyframes whatsappLight{
+
+0%{
+background-position:0% 50%;
+}
+
+50%{
+background-position:100% 50%;
+}
+
+100%{
+background-position:0% 50%;
+}
+
+}
+
+.pricing{
+padding:80px 30px;
+background:#f4f7fb;
+text-align:center;
+}
+
+.pricing h2{
+font-size:40px;
+margin-bottom:40px;
+}
+
+.pricing-box{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:25px;
+}
+
+.plan{
+width:300px;
+background:#fff;
+padding:30px;
+border-radius:15px;
+box-shadow:0 5px 20px rgba(0,0,0,.1);
+transition:.3s;
+}
+
+.plan:hover{
+transform:translateY(-10px);
+}
+
+.plan h3{
+color:#00bfff;
+margin-bottom:15px;
+}
+
+.plan h1{
+font-size:40px;
+margin:15px 0;
+}
+
+.plan p{
+margin:10px 0;
+color:#555;
+}
+
+.portfolio{
+padding:80px 30px;
+background:#fff;
+text-align:center;
+}
+
+.portfolio h2{
+font-size:40px;
+margin-bottom:20px;
+}
+
+.portfolio-text{
+margin-bottom:40px;
+color:#555;
+}
+
+.portfolio-box{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:25px;
+}
+
+.project{
+width:320px;
+background:#fff;
+border-radius:15px;
+overflow:hidden;
+box-shadow:0 5px 20px rgba(0,0,0,.1);
+transition:.3s;
+}
+
+.project:hover{
+transform:translateY(-10px);
+}
+
+.project img{
+width:100%;
+display:block;
+}
+
+.project h3{
+margin:15px 0;
+color:#00bfff;
+}
+
+.project p{
+padding:0 20px 20px;
+color:#555;
+}
+
+.gallery-big-btn{
+display:inline-block;
+position:relative;
+margin-bottom:40px;
+padding:15px 60px;
+background:#111;
+color:white;
+font-size:20px;
+font-weight:bold;
+text-decoration:none;
+border-radius:12px;
+overflow:hidden;
+z-index:1;
+}
+
+.gallery-big-btn::before{
+content:"";
+position:absolute;
+top:-3px;
+left:-3px;
+right:-3px;
+bottom:-3px;
+background:linear-gradient(
+45deg,
+red,
+blue,
+cyan,
+yellow,
+magenta,
+red
+);
+background-size:400%;
+border-radius:12px;
+z-index:-1;
+animation:rotateLight 3s linear infinite;
+}
+
+.gallery-big-btn::after{
+content:"";
+position:absolute;
+top:3px;
+left:3px;
+right:3px;
+bottom:3px;
+background:#111;
+border-radius:10px;
+z-index:-1;
+}
+
+@keyframes rotateLight{
+0%{
+background-position:0% 50%;
+}
+
+50%{
+background-position:100% 50%;
+}
+
+100%{
+background-position:0% 50%;
+}
+}
+
+.gallery-big-btn:hover{
+transform:scale(1.05);
+}
+
+@keyframes glow{
+
+0%{
+box-shadow:0 0 10px red;
+}
+
+50%{
+box-shadow:0 0 30px red;
+}
+
+100%{
+box-shadow:0 0 10px red;
+}
+
+}
+
+#changing-text{
+
+font-family:'Segoe UI', Arial, sans-serif;
+
+font-size:22px;
+
+font-weight:700;
+
+letter-spacing:0.5px;
+
+line-height:1.7;
+
+text-align:center;
+
+background:linear-gradient(
+90deg,
+#00ffff,
+#ffffff,
+#00bfff,
+#ffffff
+);
+
+background-size:300%;
+
+-webkit-background-clip:text;
+
+color:transparent;
+
+animation:textGlow 4s linear infinite;
+
+text-shadow:
+0 0 10px rgba(0,255,255,0.5);
+
+}
+
+
+@keyframes textGlow{
+
+0%{
+background-position:0% 50%;
+}
+
+50%{
+background-position:100% 50%;
+}
+
+100%{
+background-position:0% 50%;
+}
+
+}
+
+}
+
+#intro{
+
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100vh;
+background:#000;
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:9999;
+
+animation:hideIntro 1s ease 4s forwards;
+
+}
+
+
+.intro-logo{
+
+font-size:50px;
+font-weight:900;
+letter-spacing:3px;
+
+background:linear-gradient(
+90deg,
+red,
+blue,
+cyan,
+yellow,
+magenta,
+red
+);
+
+background-size:400%;
+
+-webkit-background-clip:text;
+color:transparent;
+
+animation:
+introRGB 3s linear infinite,
+zoomLogo 3s ease;
+
+text-shadow:
+0 0 20px cyan;
+
+}
+
+
+@keyframes introRGB{
+
+0%{
+background-position:0%;
+}
+
+50%{
+background-position:100%;
+}
+
+100%{
+background-position:0%;
+}
+
+}
+
+
+@keyframes zoomLogo{
+
+0%{
+transform:scale(0.5);
+opacity:0;
+}
+
+50%{
+transform:scale(1.2);
+opacity:1;
+}
+
+100%{
+transform:scale(1);
+}
+
+}
+
+
+@keyframes hideIntro{
+
+to{
+opacity:0;
+visibility:hidden;
+}
+
+}
+
+<body>
+
+<div id="intro">
+
+<div class="intro-logo">
+Anan_AI_Ads 
+</div>
+
+</div>
+
+
+<header>
+
+<div class="logo">
+Anan AI Ads
+</div>
 
 </style>
 
 </head>
 
 <body>
+
+<div id="intro">
+
+<div class="intro-logo">
+Anan_AI_Ads
+</div>
+
+</div>
 
 <header>
 
@@ -256,8 +693,8 @@ Anan AI Ads
   
 <nav>
 <a href="#">Home</a>
-<a href="#">Services</a>
-<a href="#">Portfolio</a>
+<a href="services.html">Services</a>
+<a href="gallery.html" class="gallery-btn">🎬 Gallery</a>
 <a href="#">Pricing</a>
 <a href="#">Contact</a>
 </nav>
@@ -274,13 +711,13 @@ Get Started
 
 <h1>Grow Your Business With AI Ads</h1>
 
-<p>
-We help businesses grow with AI-powered advertising, creative designs, and high-converting marketing campaigns.
+<div class="changing-box">
+
+<p id="changing-text">
+We help businesses grow with AI-powered advertising.
 </p>
 
-<a href="login.html" class="btn">
-Get Started
-</a>
+</div>
 
 </div>
 
@@ -295,6 +732,10 @@ Get Started
 <section class="services">
 
 <h2>Our Services</h2>
+
+<a href="gallery-pro.html" class="gallery-big-btn">
+🎬 View Full Gallery
+</a>
 
 <div class="service-box">
 
@@ -431,8 +872,44 @@ Here are some of our latest AI advertising projects.
 </footer>
 
 <script>
+
+let messages = [
+
+"🚀 We help businesses grow with AI-powered advertising.",
+
+"🤖 ہم AI کی مدد سے آپ کے بزنس کو نئی بلندیوں تک لے جاتے ہیں۔",
+
+"✨ Professional AI Ads, Creative Designs and Smart Marketing Solutions.",
+
+"📈 آپ کے بزنس کی growth کے لیے جدید AI ٹیکنالوجی استعمال کرتے ہیں۔",
+
+"🌐 We create powerful digital experiences for modern businesses.",
+
+"💡 ہمارا مقصد ہے کہ ہر بزنس کو AI کے ذریعے کامیاب بنانا۔",
+
+"🎬 AI Videos, Images and Ads that attract more customers."
+
+];
+
+let index = 0;
+
+setInterval(function(){
+
+document.getElementById("changing-text").innerHTML = messages[index];
+
+index++;
+
+if(index >= messages.length){
+index = 0;
+}
+
+},4000);
+
+</script>
+
+<script>
 console.log("Welcome To Anan AI Ads");
 </script>
 
 </body>
-</html>
+  </html>
